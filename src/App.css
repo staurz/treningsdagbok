@@ -1,0 +1,147 @@
+body {
+  background: #262626;
+  color:  #ffffff;
+  padding: 1em;
+}
+
+.categoryContainer {
+  margin-bottom: 2em;
+}
+
+.myChartContainer {
+  padding-left: 2em;
+}
+
+h1 {
+  text-align: center;
+}
+
+.nokkeltall-outer-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-left: 0;
+}
+.nokkeltall-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  padding-bottom: 100px;
+  max-width: 1250px;
+  justify-content: center;
+}
+
+.nokkeltall {
+  background: #2d2d2d;;
+  margin-bottom: 18px;
+  width: 100%;
+  padding: 0 20px;
+  padding-top: 40px;
+  height: 250px;
+  position: relative;
+}
+
+@media(min-width: 366px) {
+  .nokkeltall {
+    margin-right: 18px;
+    width: 348px;
+  }
+}
+
+.nokkeltall-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.nokkeltall-number {
+  font-size: 4.5rem;
+  padding-bottom: 16px;
+}
+.nokkeltall-calendar-numbers {
+  font-size: 4.5rem;
+  padding-bottom: 16px;
+  display: flex;
+  width: 200px;
+  justify-content: space-around;
+}
+
+.nokkeltall-calendar-number {
+  width: 33%;
+  text-align: center;
+}
+
+.nokkeltall-calendar-number-label {
+  font-size: 1.45rem;
+  margin-bottom: 5px;
+}
+
+.nokkeltall-subtitle {
+  font-size: 1.45rem;
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+.nokkeltall-title {
+  font-size: 2.3rem;
+}
+
+.nokkeltall-options {
+  top: 5px;
+  left: 5px;
+  font-size: 1.3rem;
+  position: absolute;
+}
+.nokkeltall-options .selected {
+  text-decoration: underline;
+}
+
+.nokkeltall-explanation li, .nokkeltall-explanation ul {
+  list-style-type: disc;
+}
+
+.nokkeltall-explanation ul {
+  margin-bottom: 0;
+}
+
+.nokkeltall-explanation {
+  padding: 20px 16px;
+}
+
+.nokkeltall-explanation-wrapper {
+  background: #2d2d2d;;
+  left: 0;
+  z-index: 1;
+  position: absolute;
+}
+
+.nokkeltall-explanation-wrapper:after {
+  content: ".";
+  display: block;
+  background-color:#262626;;
+  color: #262626;;
+  height: 8px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.nokkeltall-expand-icon {
+  color: #36BDB2;
+  text-align: center;
+  width: 100%;
+
+  line-height: 1;
+  text-decoration: none;
+
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+.nokkeltall-button {
+  color: #36BDB2;
+  font-size: 1.90rem;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
