@@ -13,7 +13,9 @@ export default class Dagbok extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            selectedYear: 2020
+        };
     }
 
     componentDidMount() {
@@ -28,24 +30,26 @@ export default class Dagbok extends React.Component {
         if (!this.state.records) {
             return <h1>fetching</h1>
         }
-        const {records} = this.state;
-        const groupedTotals = groupBy(records, x => x.type);
+        const {records, selectedYear} = this.state;
+        const recordsSelectedYear = selectedYear ? records.filter(x => x.dato.getFullYear() === selectedYear) : records;
+
+        const groupedTotals = groupBy(recordsSelectedYear, x => x.type);
         const labels = [...groupedTotals.keys()];
         const totalsummer = labels.map(x => {
             const belastning = groupedTotals.get(x);
             return belastning.length;
         });
         return (<div>
-            <NokkelTallContainer records={records}/>
+            <NokkelTallContainer records={records} selectedYear={selectedYear}/>
             <div className={"categoryContainer"}>
                 <h1>Total belastning</h1>
                 <TotalBelastning labels={labels} data={totalsummer}/>
-                <ManedsFordeling records={records}/>
+                <ManedsFordeling records={recordsSelectedYear}/>
             </div>
             <div className={"categoryContainer"}>
                 <h1>Løping</h1>
-                <LopingManed records={records}/>
-                <CurrentMonth records={records}/>
+                <LopingManed records={recordsSelectedYear}/>
+                <CurrentMonth records={recordsSelectedYear}/>
             </div>
         </div>);
     }

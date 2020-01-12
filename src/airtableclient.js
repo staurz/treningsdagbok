@@ -16,7 +16,7 @@ export function getShit(callback) {
 
         const filteredRecords = records.filter(x => x.fields.Dato && x.fields.Type);
 
-        const mappedRecors = filteredRecords.map(x => ({dato: new Date(x.fields.Dato),  distanse: x.fields.Distanse, type: x.fields.Type.trim()}));
+        const mappedRecors = filteredRecords.map(x => ({dato: new Date(x.fields.Dato),  distanse: x.fields.Distanse, type: x.fields.Type.trim(), minutter: x.fields.Minutter || 0}));
         foobar = [...foobar, ...mappedRecors];
         // To fetch the next page of records, call `fetchNextPage`.
         // If there are more records, `page` will get called again.
